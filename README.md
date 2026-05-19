@@ -3,6 +3,8 @@
 A high-performance C++/Python project for simulating the classical 2D XY model
 and studying the Berezinskii–Kosterlitz–Thouless (BKT) phase transition.
 
+**Note:** The report is given in `Final report.pdf`.
+
 ## Features
 
 - **Wolff cluster algorithm** — eliminates critical slowing down
@@ -29,8 +31,7 @@ and studying the Berezinskii–Kosterlitz–Thouless (BKT) phase transition.
 │   ├── plot_binder_helicity.py# Binder ratio & helicity modulus
 │   ├── plot_TKT.py            # Helicity FSS → T_KT
 │   └── plot_eta_chi.py        # η(T) from χ finite-size scaling
-├── run_all.sh                 # One-shot: generate → plot → save
-└── past/                      # Legacy pure-Python implementation
+└── run_all.sh                 # One-shot: generate → plot → save
 ```
 
 ## Quick Start
@@ -70,11 +71,11 @@ store raw measurements only.
 
 | Quantity | Formula |
 |----------|---------|
-| Magnetization | $$\langle\|m\|\rangle$$ |
-| Susceptibility | $$\chi = \beta N(\langle\|m\|^2\rangle - \langle\|m\|\rangle^2)$$ |
+| Magnetization | $$\langle|m|\rangle$$ |
+| Susceptibility | $$\chi = \beta N(\langle|m|^2\rangle - \langle|m|\rangle^2)$$ |
 | Energy | $$\langle e\rangle$$ |
 | Heat capacity | $$C_v = \beta^2 N(\langle e^2\rangle - \langle e\rangle^2)$$ |
-| Binder ratio | $$U_4 = 1 - \langle\|m\|^4\rangle / (3\langle\|m\|^2\rangle^2)$$ |
+| Binder ratio | $$U_4 = 1 - \langle|m|^4\rangle / (3\langle|m|^2\rangle^2)$$ |
 | Helicity modulus | $$\Upsilon = -\langle e\rangle/2 - (L^2/T)\langle h^2\rangle$$ |
 
 ## Dependencies
