@@ -1,0 +1,27 @@
+# Virtual environment
+.venv/
+
+# Compiled C++ module
+*.so
+
+# CMake build artifacts
+cpp/build/
+
+# Simulation data (large pkl files)
+data/
+
+# Generated figures
+newdrawer/fig/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE / editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
