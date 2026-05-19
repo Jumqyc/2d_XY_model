@@ -71,12 +71,12 @@ store raw measurements only.
 
 | Quantity | Formula |
 |----------|---------|
-| Magnetization | $$\langle|m|\rangle$$ |
-| Susceptibility | $$\chi = \beta N(\langle|m|^2\rangle - \langle|m|\rangle^2)$$ |
-| Energy | $$\langle e\rangle$$ |
-| Heat capacity | $$C_v = \beta^2 N(\langle e^2\rangle - \langle e\rangle^2)$$ |
-| Binder ratio | $$U_4 = 1 - \langle|m|^4\rangle / (3\langle|m|^2\rangle^2)$$ |
-| Helicity modulus | $$\Upsilon = -\langle e\rangle/2 - (L^2/T)\langle h^2\rangle$$ |
+| Magnetization | $$ \langle|m|\rangle $$ |
+| Susceptibility | $$ \chi = \beta N(\langle|m|^2\rangle - \langle|m|\rangle^2) $$ |
+| Energy | $$ \langle e\rangle $$ |
+| Heat capacity | $$ C_v = \beta^2 N(\langle e^2\rangle - \langle e\rangle^2) $$ |
+| Binder ratio | $$ U_4 = 1 - \langle|m|^4\rangle / (3\langle|m|^2\rangle^2) $$ |
+| Helicity modulus | $$ \Upsilon = -\langle e\rangle/2 - (L^2/T)\langle h^2\rangle $$ |
 
 ## Dependencies
 
