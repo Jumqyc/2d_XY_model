@@ -22,7 +22,7 @@ PYTHON_CMD="uv run python"
 N_POINTS=100          # Ntest: independent runs (x1024 ~ 1e5 samples)
 SPACING=10            # cluster update spacing
 HOT_RUNS=5            # thermalization runs
-DT=0.1                # temperature step
+DT=0.01                # temperature step
 
 # Test-mode overrides
 TEST_NTEST=3
@@ -81,9 +81,9 @@ else
 
     # 1a. Thermodynamic + eta data: single call covers all L needed
     #     by plot_thermal, plot_helicity, and plot_eta_chi
-    echo ">>> Thermal: L=16,32,48,64,80,100,128  T in [0.1,1.4]  nT~${N_THERMAL}  Ntest=${N_POINTS}"
+    echo ">>> Thermal: L=16,32,48,64,80,100,128,196,256,360  T in [0.1,1.4]  nT~${N_THERMAL}  Ntest=${N_POINTS}"
     $PYTHON_CMD generate_data.py \
-        --L 16 32 48 64 80 100 128 \
+        --L 16 32 48 64 80 100 128 196 256 360 \
         --Tmin 0.1 --Tmax 1.4 --nT "$N_THERMAL" \
         --Ntest "$N_POINTS" \
         --spacing "$SPACING" \
@@ -93,10 +93,10 @@ else
     echo ""
 
     # 1b. Dense TKT scan: many L + fine T steps (only near T_KT)
-    N_TKT=$(python3 -c "print(int((0.9 - 0.7) / 0.005) + 1)")
-    echo ">>> TKT: L=8,16,24,32,48,64,80,96  T in [0.7,0.9]  nT~${N_TKT}"
+    N_TKT=$(python3 -c "print(int((1.0 - 0.7) / 0.001) + 1)")
+    echo ">>> TKT: L=16,32,48,64,80,100,128,196,256,360  T in [0.7,0.9]  nT~${N_TKT}"
     $PYTHON_CMD generate_data.py \
-        --L 8 16 24 32 48 64 80 96 \
+        --L 16 32 48 64 80 100 128 196 256 360 \
         --Tmin 0.7 --Tmax 0.9 --nT "$N_TKT" \
         --Ntest "$N_POINTS" \
         --spacing "$SPACING" \

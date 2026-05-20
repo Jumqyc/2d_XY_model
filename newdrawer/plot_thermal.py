@@ -54,7 +54,7 @@ def main():
                            color=c, fmt=m, markersize=3, capsize=2, lw=0.6)
 
         # Susceptibility (log scale)
-        axs[0, 1].errorbar(T, L * td.chi, yerr=L * td.chi_err,
+        axs[0, 1].errorbar(T, L * td.chi, yerr= td.chi_err,
                            color=c, fmt=m, markersize=3, capsize=2, lw=0.6)
 
         # Energy
