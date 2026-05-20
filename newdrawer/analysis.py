@@ -93,7 +93,7 @@ def _compute_from_one_file(raw):
     Cv_err = N * float(confidence_interval(e2 - e1 ** 2)) / (T ** 2)
 
     binder_val = 1.0 - float(np.mean(m4)) / (3.0 * float(np.mean(m2)) ** 2)
-    binder_err = float(a(m4)) / (3.0 * float(np.mean(m2)) ** 2)
+    binder_err = float(confidence_interval(m4)) / (3.0 * float(np.mean(m2)) ** 2)
 
     H_mean = float(np.mean(hp))
     H_err = float(confidence_interval(hp))

@@ -99,15 +99,6 @@ def main():
         T_valid = T[mask]
         h_valid = h[mask]
 
-        # 三次样条插值（点少则用线性）
-        kind = "cubic" if len(T_valid) >= 4 else "linear"
-        fn = interp1d(T_valid, h_valid, kind=kind, fill_value="extrapolate")
-        interp_info[L] = {"fn": fn, "T_min": float(T_valid[0]), "T_max": float(T_valid[-1])}
-
-        # 找交点：在数据范围内二分搜索
-        Tc = find_intersection(fn, T_valid[0], T_valid[-1])
-        if Tc is not None:
-            T_cross[L] = Tc
 
     # ── T_c(L) 外推 → T_KT ──
     T_KT_fit = None
@@ -166,9 +157,6 @@ def main():
         h_at_TKT = 2.0 * T_KT_fit / np.pi
         ax_hel.axvline(T_KT_fit, color="gray", lw=0.8, linestyle=":",
                        zorder=2)
-        ax_hel.plot(T_KT_fit, h_at_TKT, marker="*", color="black",
-                    markersize=12, zorder=6,
-                    label=rf"$T_{{\mathrm{{KT}}}} = {T_KT_fit:.4f}$")
 
     # ── 左图：Binder ratio ──
     ax_binder.set_title("Binder ratio $U_4$")
