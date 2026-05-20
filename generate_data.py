@@ -89,12 +89,12 @@ def simulate_one_TL(args_tuple):
 
 def main():
     parser = argparse.ArgumentParser(description="XY model data generator (parallel)")
-    parser.add_argument("--L", type=int, nargs="+", default=[16, 32, 64, 128])
+    parser.add_argument("--L", type=int, nargs="+", default=[16, 32, 64, 96,128,196, 256])
     parser.add_argument("--Tmin", type=float, default=0.1)
     parser.add_argument("--Tmax", type=float, default=1.4)
     parser.add_argument("--nT", type=int, default=28)
     parser.add_argument("--Ntest", type=int, default=30)
-    parser.add_argument("--spacing", type=int, default=10)
+    parser.add_argument("--spacing", type=int, default=40)
     parser.add_argument("--hot", type=int, default=5)
     parser.add_argument("--workers", type=int, default=None)
     parser.add_argument("--prefix", type=str, default="thermal")

@@ -80,7 +80,7 @@ else
     N_THERMAL=$(python3 -c "print(int((1.4 - 0.1) / $DT) + 1)")
 
     # 1a. Thermodynamic + eta data: single call covers all L needed
-    #     by plot_thermal, plot_binder_helicity, and plot_eta_chi
+    #     by plot_thermal, plot_helicity, and plot_eta_chi
     echo ">>> Thermal: L=16,32,48,64,80,100,128  T in [0.1,1.4]  nT~${N_THERMAL}  Ntest=${N_POINTS}"
     $PYTHON_CMD generate_data.py \
         --L 16 32 48 64 80 100 128 \
@@ -117,11 +117,8 @@ if [[ "$MODE" == "test" ]]; then
     echo ">>> plot_thermal"
     $PYTHON_CMD newdrawer/plot_thermal.py --save --figdir "$FIG_DIR" --L 16 32
 
-    echo ">>> plot_binder_helicity"
-    $PYTHON_CMD newdrawer/plot_binder_helicity.py --save --figdir "$FIG_DIR" --L 16 32
-
-    echo ">>> plot_TKT"
-    $PYTHON_CMD newdrawer/plot_TKT.py --prefix tkt --save --figdir "$FIG_DIR" --L 16 32 64
+    echo ">>> plot_helicity"
+    $PYTHON_CMD newdrawer/plot_helicity.py --save --figdir "$FIG_DIR" --L 16 32
 
     echo ">>> plot_eta_chi"
     $PYTHON_CMD newdrawer/plot_eta_chi.py --save --figdir "$FIG_DIR" --L 16 32
@@ -129,11 +126,8 @@ else
     echo ">>> plot_thermal"
     $PYTHON_CMD newdrawer/plot_thermal.py --save --figdir "$FIG_DIR"
 
-    echo ">>> plot_binder_helicity"
-    $PYTHON_CMD newdrawer/plot_binder_helicity.py --save --figdir "$FIG_DIR"
-
-    echo ">>> plot_TKT"
-    $PYTHON_CMD newdrawer/plot_TKT.py --prefix tkt --save --figdir "$FIG_DIR"
+    echo ">>> plot_helicity"
+    $PYTHON_CMD newdrawer/plot_helicity.py --save --figdir "$FIG_DIR"
 
     echo ">>> plot_eta_chi"
     $PYTHON_CMD newdrawer/plot_eta_chi.py --save --figdir "$FIG_DIR"

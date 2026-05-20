@@ -28,8 +28,7 @@ and studying the Berezinskii–Kosterlitz–Thouless (BKT) phase transition.
 ├── newdrawer/
 │   ├── analysis.py            # Shared loader & derived-quantity computation
 │   ├── plot_thermal.py        # M, χ, E, C_v vs T
-│   ├── plot_binder_helicity.py# Binder ratio & helicity modulus
-│   ├── plot_TKT.py            # Helicity FSS → T_KT
+│   ├── plot_helicity.py       # Helicity analysis: raw + interpolation + BKT line + T_KT
 │   └── plot_eta_chi.py        # η(T) from χ finite-size scaling
 └── run_all.sh                 # One-shot: generate → plot → save
 ```
